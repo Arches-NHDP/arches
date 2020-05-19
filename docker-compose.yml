@@ -2,7 +2,7 @@ version: '2'
 services:
 
     arches:
-      container_name: arches-nhdp
+      container_name: arches
       image: arches-nhdp/arches
       build:
         context: .
