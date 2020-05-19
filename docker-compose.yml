@@ -32,7 +32,7 @@ services:
         # - DJANGO_REMOTE_DEBUG=False
         - DOMAIN_NAMES=localhost
         - PYTHONUNBUFFERED=0
-        - TZ=PST
+        - TZ=UTC
       ports:
         - '8000:8000'
       depends_on:
@@ -58,7 +58,7 @@ services:
         - LOCAL_PROXY_PORT=8000
         - DOMAIN_NAMES=localhost
         - PUBLIC_MODE=False
-        - TZ=PST
+        - TZ=UTC
       depends_on:
         - arches
 
@@ -73,7 +73,7 @@ services:
         - '5432:5432'
       environment:
         - POSTGRES_PASSWORD=postgres
-        - TZ=PST
+        - TZ=UTC
 
     couchdb:
       container_name: couchdb
@@ -96,7 +96,7 @@ services:
         - "9200:9200"
         - "9300:9300"
       environment:
-        - TZ=PST
+        - TZ=UTC
 
     letsencrypt:
       container_name: letsencrypt
@@ -112,7 +112,7 @@ services:
         - DOMAIN_NAMES=localhost
         - PRODUCTION_MODE=False
         - PERSISTENT_MODE=True
-        - TZ=PST
+        - TZ=UTC
 
 volumes:
     arches-log:
