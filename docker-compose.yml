@@ -6,7 +6,7 @@ services:
       image: arches-nhdp/arches
       build:
         context: .
-        dockerfile: ./Dockerfile
+        dockerfile: Dockerfile
       command: run_arches
       volumes:
         - arches-log:/arches/arches/logs
