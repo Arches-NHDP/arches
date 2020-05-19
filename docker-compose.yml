@@ -2,8 +2,8 @@ version: '2'
 services:
 
     arches:
-      container_name: arches
-      image: archesproject/arches:latest
+      container_name: arches-nhdp
+      image: arches-nhdp/arches
       build:
         context: .
         dockerfile: ./Dockerfile
