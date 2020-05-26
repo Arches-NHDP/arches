@@ -1,0 +1,4 @@
+
+project_name/templates/views/components/widgets/sample-widget.htm 
+project_name/media/js/views/components/widgets/sample-widget.js
+project_name/widgets/sample-widget.json

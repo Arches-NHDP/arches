@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+<meta charset="utf-8">
+{% load static %}
+
+{% block css %}
+
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap.min.css">
+		
+		<link rel="stylesheet" href="{% static 'css/glossaries.css' %}">
+		
+		
+		
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+       
+      
+		<script type="text/javascript" src="{% static 'js/list_glossary.js' %}"></script>
+
+{% endblock %}
+
+{% block title %} {{ block.super }} | Definition {% endblock %}
+
+{% block content %}
+		
+	<div class="danamtitle">
+		<h1><b>DANAM-DIGITAL ARCHIVE OF NEPALESE ARTS AND MONUMENTS</b></h1>
+		<h2>Glossary</h2>
+	</div>
+	<!-- horizontal layout----------
+	<div class="mainbody">
+		<div class="details"></div>		
+	</div>
+	-->
+	
+	<!-- vertical layout ------->
+	
+	<div class="mainbody">
+		{% csrf_token %}
+				
+		<table id="dynamictable" border="1" class="listTable">
+			<thead class="thead-dark">
+				<tr>
+					<th>Terms in diacritics</th>
+					<th>Terms in Devanagari</th>
+					<th>Definitions</th>
+					<th>Thumbnail</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				</tr></tr>
+			</tbody>
+		</table>
+	  
+	</div>
+	
+	
+	
+{% endblock %}
+	
+{% block scripts %}
+
+    
+
+{% endblock %}

@@ -1,0 +1,10 @@
+{
+    "name": "heidicon",
+    "component": "views/components/widgets/heidicon",
+    "defaultconfig": {
+        "text":"Please insert search value",
+        "Placeholder": "HeidICON Image Picker"
+    },
+    "helptext": null,
+    "datatype": "sample-datatype"
+}

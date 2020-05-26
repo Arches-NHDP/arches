@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link href="{% static 'css/definition.css' %}" rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+{% block title %} {{ block.super }} | Definition {% endblock %}
+
+{% block content %}
+
+    <div id="dynamic">
+        <div class="heading">
+            <h1><b>DANAM GLOSSARY</b></h1>
+            <hr>
+        </div>
+        
+        <center>
+        
+            
+                Search term: <input type="text" id="term" onkeypress="listTerms(event);"><br>
+                <input type="button" value="Search" onclick="listTerms(event);">
+            
+        
+        </center>  
+
+
+         
+        <div id="info"></div> 
+        
+        <div>
+            <table id="dynamictable" align="center">
+        </div>
+
+
+        </table>
+
+
+    </div>
+{% endblock %}
+	
+{% block scripts %}
+
+    <script src="{% static 'js/voclist.js' %}"></script>
+
+
+{% endblock %}

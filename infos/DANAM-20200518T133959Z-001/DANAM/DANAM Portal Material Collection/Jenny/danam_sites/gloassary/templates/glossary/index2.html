@@ -1,0 +1,112 @@
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link href="{% static 'css/definition.css' %}" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="{% static 'danamvocab/css/style.css' %}" type="text/css">
+{% endblock %}
+
+{% block title %} {{ block.super }} | Definition {% endblock %}
+
+<!--<script src="{% static 'danamvocab/js/dispVoc.js' %}"></script>-->
+{% block content %}
+
+<div class="wrapper">
+  <div id="definitionModel" class = "model">
+
+    {%if voca_list %}
+	<ul>
+        {% for v in voca_list %}
+        <div class = "model-content">
+		        <li id="list">{{ v }}</li>
+
+		    {% endfor %}
+    {% else %}
+				    <p>No vocabularies are available.</p>
+	</ul>
+{% endif %}
+
+Capāḥ
+kava&#x0303;
+
+</div>
+</div>
+</div>
+<div class="container">
+  <h1 class="text-center">Details on</h1>
+  
+  <div id="content" contentEditable="false">
+    <p>[New.] n. evil spirit in the shape of skeleton. This figure generally can be found painted on the wall,
+      left-hand side of the main entrance of a temple in Kathmandu Valley. For example, this can be observed
+      at Svetabhairava temple located in Ikhalakhu and Khapi~che~ Bhairava temple located in Khapi~che~ Tola,
+      Patan (see, LAL0100 and LAL1780).</p>
+    <p>[S.] javal\u0101val\u012b; jval\u0101vali; n. a type of caitya with the circular frieze of flame motifs.
+      Thefirst structure of this type of caitya was built in 1831 at B\u0101punani, a courtyard near
+      Hakh\u0101 in Patan (cf. Gutschow 1997, 278)</p>
+    <p>[fr. S. da\u015b\u0101ha] var. dasai, da\u015bai; n. festival to worship the goddess Durg\u0101 as slayer
+      of Mahi\u1e63\u0101sura (buffalo demon), held over the bright half of the autumn month of
+      \u0100\u015bvina (ba\u1e0d\u0101dasai\u0303/mah\u0101dasai\u0303) and, on a smaller scale, over the
+      bright half of the spring month of Caitra (caitedasai\u0303).></p>
+    <p>kava\u0303</p>
+    <p>kava&#x0303;</p>
+    <p>jv&#x0101;l&#x0101;vali</p>
+    <p>sa&#x1e45;gha</p>
+    <p>khy&#x0101;&#x1e25;/khy&#x0101;ka</p>
+    <p>&#x015b;ikhara<p>
+
+    <p>[New.] n. evil spirit in the shape of skeleton. This figure generally can be found painted on the wall,
+      left-hand side of the main entrance of a temple in Kathmandu Valley. For example, this can be observed
+      at Svetabhairava temple located in Ikhalakhu and Khapi~che~ Bhairava temple located in Khapi~che~ Tola,
+      Patan (see, LAL0100 and LAL1780). </p>
+    <p>[S.] javalāvalī; jvalāvali; n. a type of caitya with the circular frieze of flame motifs. The first
+      structure of this type of caitya was built in 1831 at Bāpunani, a courtyard near Hakhā in Patan (cf.
+      Gutschow 1997, 278)</p>
+    <p>[fr. S. daśāha] var. dasai, daśai; n. festival to worship the goddess Durgā as slayer of Mahiṣāsura
+      (buffalo demon), held over the bright half of the autumn month of Āśvina (baḍādasaĩ/mahādasaĩ) and, on
+      a smaller scale, over the bright half of the spring month of Caitra (caitedasaĩ).</p>
+    <p>kavã</p>
+    <p>jvālāvali</p>
+
+  </div>
+
+<div>
+  <p id="deb">kk</p>
+
+<img src= "{% static 'img/temple.jpg' %}"" alt="no static"/>
+<script>
+    function highlight(text){
+         html = document.documentElement.innerHTML;
+         re = new RegExp(text,'g');
+         if(re.test(html)){
+            html = html.replace(re, '<span class="highlight-text">'+text+'</span>');
+         }
+         document.documentElement.innerHTML = html;
+    }
+
+    {% for v in voca_list %}
+        highlight('{{ v }}');
+    {% endfor %}
+</script>
+
+	
+<script src="{% static 'danamvocab/js/basic.js' %}"></script>
+<div class="close"></div>
+
+		<!-- The Modal -->
+		<div id="definitionModal" class="modal">
+			<!-- Modal content -->
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<p class="definition">No data</p>
+			</div>
+		</div>
+
+  </div>
+  
+  
+  {% endblock %}
+  {% block scripts %}
+    
+  {% endblock %}

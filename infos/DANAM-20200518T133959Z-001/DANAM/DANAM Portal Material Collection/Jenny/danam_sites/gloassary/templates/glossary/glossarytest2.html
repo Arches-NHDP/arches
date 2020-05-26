@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link href="{% static 'css/definition.css' %}" rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+{% block title %} {{ block.super }} | Definition {% endblock %}
+
+{% block content %}
+
+    <div id="dynamic">
+        <div class="heading">
+            <h1><b>DANAM GLOSSARY</b></h1>
+            <hr>
+        </div>
+	<!--
+	<form action="/term/" method="post">
+		{% csrf_token %}
+		{{ form }}
+		<input type="submit" value="OK">
+	</form>
+	-->
+	<button type="button" id="send-my-url-to-django-button">Send URL to Django View</button>	
+	
+	<p>
+
+	<strong id="like_count">{{ category.likes }}</strong> people like this category
+
+	{% if user.is_authenticated %}
+        <button id="likes" data-catid="{{category.id}}" class="btn btn-primary" type="button">
+        <span class="glyphicon glyphicon-thumbs-up"></span>
+        Like
+        </button>
+	{% endif %}
+
+	</p>
+	
+	
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        var sometext = [1, 2];
+        $("#send-my-url-to-django-button").click(function() {
+			alert(sometext);
+			var jsontxt = JSON.stringify(sometext);
+            $.ajax({
+                url: "localhost:8000/vocab/enter",
+                type: "POST",
+                dataType: "html",
+                data: jsontext
+                success : function(result) {
+                    alert("Successfully sent the sometext to Django");
+                },
+                error : function(xhr,errmsg,err) {
+                    alert("Could not send sometext to Django. Error: " + xhr.status + ": " + xhr.responseText);
+                }
+            });
+        });
+    });
+</script>
+{% endblock %}
+	
+{% block scripts %}
+
+    <script src="{% static 'js/voclist.js' %}"></script>
+
+
+{% endblock %}

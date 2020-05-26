@@ -1,0 +1,30 @@
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css %}
+<!--<link href="{% static 'css/definition.css' %}" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="{% static 'danamvocab/css/style.css' %}" type="text/css">-->
+{% block content %}
+{% endblock %}
+
+
+<H1 id = "head"></h1>
+<table id="detailedtable" align="center">
+    <tbody>
+        <tr>
+            <td style="vertical-align: center;"><br>
+            <div id = "data" class="dt"></div>
+            
+            </td>
+            <td style="vertical-align: center;" id = "img"><br></td>
+        </tr>
+    </tbody>
+</table>
+  
+  
+  {% endblock %}
+  {% block scripts %}
+    <script src="{% static 'js/voclistDetail.js' %}" charset="utf-8"></script>
+  {% endblock %}

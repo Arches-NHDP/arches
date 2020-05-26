@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link href="{% static 'css/external/bootstrap.min.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/external/prettify.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'css/bootstrap-wysihtml5.css' %}" rel="stylesheet" type="text/css"/>
+<style type="text/css" media="screen">
+	.btn.jumbo {
+		font-size: 20px;
+		font-weight: normal;
+		padding: 14px 24px;
+		margin-right: 10px;
+		-webkit-border-radius: 6px;
+		-moz-border-radius: 6px;
+		border-radius: 6px;
+	}
+</style>
+{% endblock %}
+
+{% block title %} {{ block.super }} | Definition {% endblock %}
+
+{% block content %}
+
+
+<div class="container">
+	<div class="container">
+		<h3>TODO:</h3>
+		<ul>
+			<li>Take out trash</li>
+		</ul>
+		<button class="get-more">Get More todos</button>
+	</div>
+<!--	<div class="container">
+		<h3>Add TODO</h3>
+		{% csrf_token %}
+		<div>
+			<label for="todo">
+				<input class="todo-item type="text" placeholder="Todo Item">
+			</label>
+				<button class="add-todo">Add Todo</button>
+		</div>
+	</div>-->
+</div>
+
+<div class="container">
+	<div class="hero-unit" style="margin-top:40px">
+		<h1 style="font-size:58px">DANAM Glossary<small>Managing the glossaries</small></h1>
+		<hr/>
+		
+		<textarea class="textarea" id="description" placeholder="Enter the definition" style="width: 810px; height: 200px"></textarea>
+		<!--<textarea class="textarea2" placeholder="Enter text2 ..." style="width: 810px; height: 200px"></textarea>-->
+		
+	</div>
+	
+	
+</div>
+
+{% endblock %}
+	
+{% block scripts %}
+	<script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-30181385-1']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
+	</script>
+	<script>
+		$('.textarea').wysihtml5();
+	</script>
+	<script type="text/javascript" charset="utf-8">
+		$(prettyPrint);
+	</script>
+	<script src="{% static 'js/external/wysihtml5-0.3.0.js' %}"></script>
+	<script src="{% static 'js/external/jquery-1.7.2.min.js' %}"></script>
+	<script src="{% static 'js/external/prettify.js' %}"></script>
+	<script src="{% static 'js/external/bootstrap.min.js' %}"></script>
+	<script src="{% static 'js/bootstrap-wysihtml5.js' %}"></script>
+
+	<script src="{% static 'js/external/jquery-3.4.1.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+{% endblock %}

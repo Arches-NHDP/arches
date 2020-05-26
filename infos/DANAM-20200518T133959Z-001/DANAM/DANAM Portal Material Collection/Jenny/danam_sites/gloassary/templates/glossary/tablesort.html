@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css %}
+
+        <link rel="stylesheet"  href="{% static 'css/external/tables/sort/theme.default.css' %}">
+        
+		<link rel="stylesheet" href="{% static 'css/glossaries.css' %}">
+		
+		
+		
+        <!--<script type="text/javascript" src="{% static 'js/external/tables/sort/jquery.tablesorter.js' %}"></script>-->
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script type="text/javascript" src="http://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+		<!--<script type="text/javascript" src="{% static 'js/external/tables/sort/jquery.tablesorter.widgets.js' %}"></script>-->
+		<script type="text/javascript" src="{% static 'js/tmp.js' %}"></script>
+		
+{% endblock %}
+
+{% block title %} {{ block.super }} | Definition {% endblock %}
+
+{% block content %}
+		
+	<div class="title">
+		<h1><b>DANAM-DIGITAL ARCHIVE OF NEPALESE ARTS AND MONUMENTS</b></h1>
+		<h2>Glossary</h2>
+	</div>
+	<!-- horizontal layout----------
+	<div class="mainbody">
+		<div class="details"></div>		
+	</div>
+	-->
+	
+	
+	
+	<!-- inserted table -->
+	
+	<table id="myTable" class="tablesorter">
+  <thead>
+    <tr>
+      <th>Last Name</th>
+      <th>First Name</th>
+      <th>Email</th>
+      <th>Due</th>
+      <th>Web Site</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Smith</td>
+      <td>John</td>
+      <td>jsmith@gmail.com</td>
+      <td>$50.00</td>
+      <td>http://www.jsmith.com</td>
+    </tr>
+    <tr>
+      <td>Bach</td>
+      <td>Frank</td>
+      <td>fbach@yahoo.com</td>
+      <td>$50.00</td>
+      <td>http://www.frank.com</td>
+    </tr>
+    <tr>
+      <td>Doe</td>
+      <td>Jason</td>
+      <td>jdoe@hotmail.com</td>
+      <td>$100.00</td>
+      <td>http://www.jdoe.com</td>
+    </tr>
+    <tr>
+      <td>Conway</td>
+      <td>Tim</td>
+      <td>tconway@earthlink.net</td>
+      <td>$50.00</td>
+      <td>http://www.timconway.com</td>
+    </tr>
+  </tbody>
+</table>
+	
+	
+	<!-- vertical layout ------->
+	<!--
+	<div class="mainbody">
+		{% csrf_token %}
+				
+		<table id="dynamictable" border="1" class="table">
+		  <thead><tr>
+			<th scope="th-sm">#</th>
+			<th scope="th-sm">Anglicized term</th>
+			<th scope="th-sm">Nepali term</th>
+			<th scope="th-sm">Definitions</th>
+			<th scope="th-sm">Thumbnail</th>
+			<th></th>
+			
+		  </tr></thead>
+		  <tr></tr>
+		</table>
+	  
+	</div>
+	-->
+{% endblock %}
+	
+{% block scripts %}
+
+    
+
+{% endblock %}

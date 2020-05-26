@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+
+As a rule, it is about depositing an image / audio / video URL in the target systems, so that the asset from heidICON 
+can be found there is displayed. A target system uses the asset deep link to the different versions in the respective edit masks. 
+One of the call parameters is a target field of the edit mask in which the selected / searched URL is then written.
+
+Write in a target field of the edit mask the selected URL.
+
+author: Jelena Ekimotcheva
+date:   9/10/2018
+
+-->
+{% load static %}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/easydb/easydbstyles.css' %}"> 
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Language" content="de" />
+    <meta name="title" content="HeidICON" />
+    <meta name="keywords" content="HeidICON Universitätsbibliothek, Virtuelle Diathek der Hochschulbibliothek, HeidICON Universitätsbibliohek, HeidICON Hochschulbibliothek" />
+    <meta name="description" content="The image database provided by the university library heidICON
+				      is the >>Virtual Diathek<< of the University of Heidelberg." />
+    <meta name="organization-name" content="Universitätsbibliothek Heidelberg" />
+    <meta name="organization-email" content="ub@ub.uni-heidelberg.de" />
+    <meta name="city" content="Heidelberg" />
+    <meta name="country" content="Germany - Deutschland" />
+    <meta name="language" content="German, Deutsch, de, at, ch" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- FA ICONS einbinden-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <body>
+    {% csrf_token %}
+    <div class="main-page">
+      
+      <h2>heidICON Picker</h2>
+      
+      <form name="targetsystem-edit-mask" >
+	<label>
+<!--	  <select name="options" id="easydb-picker-options">
+	  </select> -->
+	</label>
+	<input type="text" id="easydb-picker-search-title" placeholder="heidICON Objekt "> </input>
+	<button type="button" id="easydb-picker-button"> </input><i class="fa fa-search"></i></button>
+      </form>
+
+      <div id="div-image"></div>
+	</div> <!-- end class="main-page" -->
+	<script src="{% static 'js/easydb/config.js' %}"></script> 	    
+	<script src="{% static 'js/easydb/easydbpicker.js' %}"></script>
+	<!--<script src="{% static 'js/easydb/myjs.js' %}"></script>-->
+	<!-- CALLBACKFUNCTION EXAMPLE -->
+      </body>
+    </html>
+      
+
+

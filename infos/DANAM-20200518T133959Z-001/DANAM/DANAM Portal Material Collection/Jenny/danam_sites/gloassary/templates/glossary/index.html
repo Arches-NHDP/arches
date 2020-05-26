@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css %}
+		
+		<link rel="stylesheet" type="text/css" href="{% static 'css/easydb/easydbstyles.css' %}"> 
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <!--<link rel="stylesheet" href="{% static 'css/external/font-awesome.min.css' %}">-->
+		
+        <link rel="stylesheet"  href="{% static 'css/rtf/editor.css' %}">
+		<link rel="stylesheet" href="{% static 'css/glossaries.css' %}">
+		
+		<!--
+		<link rel="stylesheet"  href="{% static 'css/rtf/site.css' %}">
+        <link rel="stylesheet" href="{% static 'css/rtf/richtext.min.css' %}">
+		-->
+
+
+{% endblock %}
+
+{% block title %} {{ block.super }} | Definition {% endblock %}
+
+{% block content %}
+	<div class="danamtitle">
+		<h1><b>DANAM-DIGITAL ARCHIVE OF NEPALESE ARTS AND MONUMENTS</b></h1>
+		<h2>Glossary</h2>
+	</div>
+	<div class="mainbody">
+
+	{% csrf_token %}
+				
+		<div class="main-content">		
+			<div>		
+				<label for="text-roman" font="2"><b>Anglicized term</b></label><br>
+				<input class="text-term-roman" type="text" height="20px" id="text-roman"></input><br>
+			</div>
+			<div>
+				<label for="text-dev" font="2"><b>Nepali term</b></label><br>
+				<input class="text-term-dev" id = "text-dev" type="text" height="20px"></input><br>
+			</div>
+			<div>
+				<label for="text-desc" id="text-desc" font="2"><b>Definition</b></label>
+				<textarea class="text-description" name="description", id="text-desc"></textarea>
+			</div>
+			<div class="div-img" id="div-image"></div>
+			<div class="danam-image-picker">
+				<label for="form-input">DANAM heidICON Picker</label>
+			   	<form name="targetsystem-edit-mask" class="form-inputs">
+					<input type="text" id="easydb-picker-search-title" placeholder="heidICON Objects "> </input>
+					<button type="button" id="easydb-picker-button"> </input><i class="fa fa-search"></i></button>
+				</form>
+			</div>
+		</div>
+		<div class="div-button">
+			<table class="buttons-table">
+			  <tr>
+				<td align="left"><button class="add-glossary">Add the term</button></td>
+				<td align="right"><button class="reset-terms">Reset</button></td>
+			  </tr>
+			</table>
+		</div>
+	
+		
+	</div>
+		
+        
+{% endblock %}
+	
+{% block scripts %}
+	<!--
+		<script type="text/javascript" src="{% static 'js/external/bootstrap.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/external/jquery.min.js' %}"></script>
+	-->
+		
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!--
+		<script type="text/javascript" src="{% static 'js/rtf/jquery.richtext.js' %}"></script>
+	-->
+		<script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+	    <script type="text/javascript" src="{% static 'js/rtf/editor.js' %}"></script>
+		<script src="{% static 'js/easydb/config.js' %}"></script> 	    
+		<script src="{% static 'js/easydb/easydbpicker.js' %}"></script> 
+    
+
+{% endblock %}

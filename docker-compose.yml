@@ -2,11 +2,11 @@ version: '2'
 services:
 
     arches:
-      container_name: arches
-      image: arches-nhdp/arches
+      container_name: arches_project
+      image: archesproject/arches:latest
       build:
         context: .
-        dockerfile: Dockerfile
+        dockerfile: ./Dockerfile
       command: run_arches
       volumes:
         - arches-log:/arches/arches/logs
